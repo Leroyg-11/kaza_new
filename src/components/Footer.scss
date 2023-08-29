@@ -1,0 +1,46 @@
+@use "../components/Color.scss" as *;
+
+footer {
+  display: flex;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+
+  background-color: $background-dark;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  img {
+    padding: 0.5rem;
+  }
+
+  p {
+    color: $color-tertiary;
+    .break {
+      display: none;
+    }
+  }
+}
+
+@media screen and (width <= 768px) {
+  footer {
+    min-height: 25vh;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    p {
+      text-align: center;
+      .break {
+        display: inline;
+      }
+    }
+    > * {
+      margin: auto;
+    }
+  }
+}

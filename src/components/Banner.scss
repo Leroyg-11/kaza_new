@@ -1,0 +1,36 @@
+@use "../components/Color.scss" as *;
+
+.banner {
+  margin: 3rem;
+  min-height: 30vh;
+  padding-inline: 2rem;
+  background-image: url(../asset/BackgroundAbout.png);
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 3rem;
+  border-radius: 2rem;
+  display: grid;
+  place-items: center;
+  color: $color-tertiary;
+  h2 {
+    font-weight: 400;
+    font-size: x-large;
+    .break {
+      display: none;
+    }
+  }
+}
+
+@media screen and (width <= 768px) {
+  .banner {
+    margin: 1rem 1.5rem 2rem 1.5rem;
+    min-height: 16vh;
+    h2 {
+      margin-right: 10vh;
+      font-size: 24px;
+      .break {
+        display: inline;
+      }
+    }
+  }
+}

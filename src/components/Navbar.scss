@@ -1,0 +1,47 @@
+@use "../components/Color.scss" as *;
+
+nav {
+  margin: 3rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  align-items: center;
+  ul {
+    display: flex;
+    list-style: none;
+    a {
+      text-decoration: none;
+    }
+    li {
+      font-size: 700;
+      margin-left: 2rem;
+      color: $color-primary;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+  img {
+    cursor: pointer;
+  }
+}
+@media screen and (width <= 768px) {
+  nav {
+    margin: 1.5rem;
+    img {
+      width: 65%;
+    }
+    ul {
+      padding: 0;
+      li {
+        white-space: nowrap;
+        padding-left: 15px;
+        text-transform: uppercase;
+        margin: 0;
+      }
+    }
+  }
+}

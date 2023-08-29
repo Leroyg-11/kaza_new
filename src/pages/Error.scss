@@ -1,0 +1,14 @@
+@use "../components/Color.scss" as *;
+
+.error {
+  text-align: center;
+  color: $color-primary;
+  padding-bottom: 1rem;
+  h1 {
+    font-size: 7rem;
+  }
+  a {
+    // text-decoration: none;
+    color: $color-primary;
+  }
+}

@@ -1,0 +1,24 @@
+@use "../components/Color.scss" as *;
+
+.apartment_grid {
+  padding: 2%;
+  flex-wrap: wrap;
+  background-color: #fff;
+  border-radius: 2rem;
+  margin-bottom: 3rem;
+  background-color: $grid-background-light;
+  display: flex;
+  margin: 2rem;
+  gap: 1rem;
+
+  justify-content: space-around;
+}
+@media screen and (width <= 768px) {
+  .apartment_grid {
+    flex-basis: 100%;
+    background-color: white;
+    margin: 1rem 1.5rem 2rem 1.5rem;
+    border: none;
+    padding: 0;
+  }
+}
