@@ -1,10 +1,10 @@
 import React from "react";
-import "./Banner.scss";
-import imgBanner from "../asset/BackgroundBanner.png";
-import Footer from "./Footer";
+import "./BannerAbout.scss";
+// import imgBanner from "../asset/BackgroundBanner.png";
+// import Footer from "./Footer";
 
-const Banner = () => {
-  return <div className="banner"></div>;
+const BannerAbout = () => {
+  return <div className="banner_about"></div>;
 };
 
-export default Banner;
+export default BannerAbout;

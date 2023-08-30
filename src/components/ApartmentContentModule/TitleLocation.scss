@@ -1,0 +1,15 @@
+@use "../../components/Color.scss" as *;
+
+.title_location {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3vh;
+  h1 {
+    margin: 0;
+    margin-bottom: 1vh;
+  }
+  h2 {
+    font-weight: 200;
+    margin: 0;
+  }
+}

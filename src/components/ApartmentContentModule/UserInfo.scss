@@ -1,0 +1,33 @@
+@use "../../components/Color.scss" as *;
+
+.owner_info {
+  display: flex;
+  align-items: center;
+  h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    margin-left: 20px;
+  }
+}
+
+.apartment_owner_stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  color: $grid-background-dark;
+
+  * {
+    font-size: 2rem;
+  }
+  .on {
+    color: $color-primary;
+  }
+}

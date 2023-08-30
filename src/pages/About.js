@@ -1,13 +1,12 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Banner from "../components/Banner";
-import Footer from "../components/Footer";
+
 import AboutContent from "../components/AboutContent";
+import BannerAbout from "../components/BannerAbout";
 
 const About = () => {
   return (
     <div>
-      <Banner />
+      <BannerAbout />
       <AboutContent />
     </div>
   );

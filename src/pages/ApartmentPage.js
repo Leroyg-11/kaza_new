@@ -17,7 +17,6 @@ function ApartmentPage(props) {
     const flat = dataBase.find((flat) => flat.id === id);
     setSelectedFlat(flat);
   }
-  console.log("selectflat:", selectedFlat);
   if (!selectedFlat) return <Error />;
 
   if (selectedFlat == null) return <div> ...Loading</div>;
