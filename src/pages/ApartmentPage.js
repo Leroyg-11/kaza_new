@@ -4,7 +4,7 @@ import ApartmentContent from "../components/ApartmentContent";
 import dataBase from "../utils/db.json";
 import Error from "../pages/Error";
 
-function ApartmentPage(props) {
+function ApartmentPage() {
   const { id } = useParams();
 
   const [selectedFlat, setSelectedFlat] = useState(null);

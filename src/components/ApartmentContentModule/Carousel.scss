@@ -32,4 +32,17 @@
       color: $color-tertiary;
     }
   }
+  .counter {
+    color: $color-tertiary;
+    position: relative;
+    top: 90%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (width <= 768px) {
+  .counter {
+    opacity: 0;
+  }
 }

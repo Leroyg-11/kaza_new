@@ -13,3 +13,9 @@
     margin: 0;
   }
 }
+
+@media screen and (width <= 768px) {
+  .title_location {
+    align-self: flex-start;
+  }
+}

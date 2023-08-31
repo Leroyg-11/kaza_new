@@ -23,20 +23,21 @@ const Carousel = (props) => {
     setCurrentPic(currentPic - 1);
   };
   return (
-    <div>
-      <div className="apartment_img">
-        {pictures.map((pic, i) => (
-          <img
-            key={pic}
-            src={pic}
-            alt="All Pictures Of Apartment"
-            className={getClassName(i)}
-          ></img>
-        ))}
-        <div className="button_container">
-          <button onClick={moveToNext}>ᐳ</button>
-          <button onClick={moveToPrevious}>ᐸ</button>
-        </div>
+    <div className="apartment_img">
+      {pictures.map((pic, i) => (
+        <img
+          key={pic}
+          src={pic}
+          alt="All Pictures Of Apartment"
+          className={getClassName(i)}
+        ></img>
+      ))}
+      <p className="counter">
+        {currentPic + 1}/{pictures.length}
+      </p>
+      <div className="button_container">
+        <button onClick={moveToNext}>ᐳ</button>
+        <button onClick={moveToPrevious}>ᐸ</button>
       </div>
     </div>
   );

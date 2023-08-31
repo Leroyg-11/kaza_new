@@ -4,24 +4,38 @@ import TextWrap from "./ApartmentContentModule/TextWrap";
 import Tag from "./ApartmentContentModule/Tag";
 import UserInfo from "./ApartmentContentModule/UserInfo";
 import TitleLocation from "./ApartmentContentModule/TitleLocation";
+import { useEffect, useState } from "react";
 
 const ApartmentContent = (props) => {
+  const { flat } = props;
+
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className="apartment_content">
-      <Carousel pictures={props.flat.pictures} />
+      <Carousel pictures={flat.pictures} />
       <div className="owner_info_container">
-        <TitleLocation
-          title={props.flat.title}
-          location={props.flat.location}
-        />
-        <UserInfo rating={props.flat.rating} host={props.flat.host} />
-      </div>
-      <Tag tags={props.flat.tags} />
+        <div className="divtest">
+          <TitleLocation title={flat.title} location={flat.location} />
+          {isMobile && <Tag tags={flat.tags} />}
 
-      <TextWrap
-        description={props.flat.description}
-        equipments={props.flat.equipments}
-      />
+          <UserInfo rating={flat.rating} host={flat.host} />
+        </div>
+        {!isMobile && <Tag tags={flat.tags} />}
+      </div>
+
+      <TextWrap description={flat.description} equipments={flat.equipments} />
     </div>
   );
 };

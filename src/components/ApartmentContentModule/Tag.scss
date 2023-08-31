@@ -1,13 +1,24 @@
 @use "../../components/Color.scss" as *;
 
 .apartment_tag {
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   span {
     padding: 5px 35px;
     border-radius: 10px;
     margin: 5px 5px 25px 0;
-
+    text-overflow: ellipsis;
     background-color: $color-primary;
     color: $color-tertiary;
+    overflow: hidden;
+  }
+}
+
+@media screen and (width <= 768px) {
+  .apartment_tag {
+    span {
+      width: auto;
+    }
   }
 }

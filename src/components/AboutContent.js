@@ -1,102 +1,96 @@
-import React, { useState } from "react";
-import vector from "../asset/Vector.png";
+import React from "react";
 import "./AboutContent.scss";
 
-const AboutGrid = () => {
-  const [contentVisibility, setContentVisibility] = useState(
-    new Array(4).fill(false)
-  );
+import vector from "../asset/Vector.png";
 
-  const [imageRotation, setImageRotation] = useState(new Array(4).fill(0));
+import { useState } from "react";
 
-  const showContent = (index) => {
-    const updatedVisibility = [...contentVisibility];
-    updatedVisibility[index] = !updatedVisibility[index];
-    setContentVisibility(updatedVisibility);
+const About = () => {
+  const [isOpenOne, setIsOpenOne] = useState(false);
+  const [isOpenTwo, setIsOpenTwo] = useState(false);
+  const [isOpenThree, setIsOpenThree] = useState(false);
+  const [isOpenFour, setIsOpenFour] = useState(false);
 
-    const updatedRotation = [...imageRotation];
-    updatedRotation[index] = updatedVisibility[index] ? 180 : 0;
-    setImageRotation(updatedRotation);
-  };
+  function handleClickOne() {
+    setIsOpenOne(!isOpenOne);
+  }
+
+  function handleClickTwo() {
+    setIsOpenTwo(!isOpenTwo);
+  }
+  function handleClickThree() {
+    setIsOpenThree(!isOpenThree);
+  }
+  function handleClickFour() {
+    setIsOpenFour(!isOpenFour);
+  }
 
   return (
-    <div className="about_grid">
-      <article onClick={() => showContent(0)}>
-        <div className="title">
-          <h2>Fiabilité</h2>
-          <img
-            src={vector}
-            alt="view more details"
-            style={{ transform: `rotate(${imageRotation[0]}deg)` }}
-          />
+    <div className="about">
+      <div className={`container_box ${isOpenOne ? "open" : ""}`}>
+        <div
+          className={`title_box ${isOpenOne ? "open" : ""}`}
+          onClick={handleClickOne}
+        >
+          <h3>Fiabilité</h3>
+          <img src={vector} alt="" />
         </div>
-        {contentVisibility[0] && (
-          <p>
-            Les annonces postées sur Kasa garantissent une fiabilité totale. Les
-            photos sont conformes aux logements, et toutes les informations sont
-            régulièrement vérifiées par nos équipes.
-          </p>
-        )}
-      </article>
+        <p>
+          Les annonces postées sur Kasa garantissent une fiabilité totale. Les
+          photos sont conformes aux logements, et toutes les informations sont
+          régulièrement vérifiées par nos équipes.
+        </p>
+      </div>
 
-      <article onClick={() => showContent(1)}>
-        <div className="title">
-          <h2>Respect</h2>
-          <img
-            src={vector}
-            alt="view more details"
-            style={{ transform: `rotate(${imageRotation[1]}deg)` }}
-          />
+      <div className={`container_box ${isOpenTwo ? "open" : ""}`}>
+        <div
+          className={`title_box ${isOpenTwo ? "open" : ""}`}
+          onClick={handleClickTwo}
+        >
+          <h3>Respect</h3>
+          <img src={vector} alt="" />
         </div>
-        {contentVisibility[1] && (
-          <p>
-            La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
-            comportement discriminatoire ou de perturbation du voisinage
-            entraînera une exclusion de notre plateforme.
-          </p>
-        )}
-      </article>
+        <p>
+          La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
+          comportement discriminatoire ou de perturbation du voisinage
+          entraînera une exclusion de notre plateforme.
+        </p>
+      </div>
 
-      <article onClick={() => showContent(2)}>
-        <div className="title">
-          <h2>Service</h2>
-          <img
-            src={vector}
-            alt="view more details"
-            style={{ transform: `rotate(${imageRotation[2]}deg)` }}
-          />
+      <div className={`container_box ${isOpenThree ? "open" : ""}`}>
+        <div
+          className={`title_box ${isOpenThree ? "open" : ""}`}
+          onClick={handleClickThree}
+        >
+          <h3>Service</h3>
+          <img src={vector} alt="" />
         </div>
-        {contentVisibility[2] && (
-          <p>
-            La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
-            comportement discriminatoire ou de perturbation du voisinage
-            entraînera une exclusion de notre plateforme.
-          </p>
-        )}
-      </article>
+        <p>
+          La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
+          comportement discriminatoire ou de perturbation du voisinage
+          entraînera une exclusion de notre plateforme.
+        </p>
+      </div>
 
-      <article onClick={() => showContent(3)}>
-        <div className="title">
-          <h2>Securité</h2>
-          <img
-            src={vector}
-            alt="view more details"
-            style={{ transform: `rotate(${imageRotation[3]}deg)` }}
-          />
+      <div className={`container_box ${isOpenFour ? "open" : ""}`}>
+        <div
+          className={`title_box ${isOpenFour ? "open" : ""}`}
+          onClick={handleClickFour}
+        >
+          <h3>Securité</h3>
+          <img src={vector} alt="" />
         </div>
-        {contentVisibility[3] && (
-          <p>
-            La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que
-            pour les voyageurs, chaque logement correspond aux critères de
-            sécurité établis par nos services. En laissant une note aussi bien à
-            l'hôte qu'au locataire, cela permet à nos équipes de vérifier que
-            les standards sont bien respectés. Nous organisons également des
-            ateliers sur la sécurité domestique pour nos hôtes.
-          </p>
-        )}
-      </article>
+        <p>
+          La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que
+          pour les voyageurs, chaque logement correspond aux critères de
+          sécurité établis par nos services. En laissant une note aussi bien à
+          l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les
+          standards sont bien respectés. Nous organisons également des ateliers
+          sur la sécurité domestique pour nos hôtes.
+        </p>
+      </div>
     </div>
   );
 };
 
-export default AboutGrid;
+export default About;
