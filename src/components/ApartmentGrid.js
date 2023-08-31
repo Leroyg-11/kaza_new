@@ -14,6 +14,7 @@ function ApartmentGrid() {
     <div className="apartment_grid">
       {apartments.map((apartment) => (
         <Apartment
+          key={apartment.id}
           title={apartment.title}
           cover={apartment.cover}
           id={apartment.id}
