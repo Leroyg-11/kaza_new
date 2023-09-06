@@ -22,6 +22,23 @@ const Carousel = (props) => {
     }
     setCurrentPic(currentPic - 1);
   };
+
+  if (pictures.length <= 1) {
+    // Si pictures.length est inférieur ou égal à 1, ne rend rien
+    return (
+      <div className="apartment_img">
+        {pictures.map((pic, i) => (
+          <img
+            key={pic}
+            src={pic}
+            alt="All Pictures Of Apartment"
+            className={getClassName(i)}
+          ></img>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div className="apartment_img">
       {pictures.map((pic, i) => (

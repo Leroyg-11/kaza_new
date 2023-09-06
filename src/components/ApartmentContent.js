@@ -26,7 +26,7 @@ const ApartmentContent = (props) => {
     <div className="apartment_content">
       <Carousel pictures={flat.pictures} />
       <div className="owner_info_container">
-        <div className="divtest">
+        <div className="info_mobile_container">
           <TitleLocation title={flat.title} location={flat.location} />
           {isMobile && <Tag tags={flat.tags} />}
 
