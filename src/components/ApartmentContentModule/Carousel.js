@@ -47,9 +47,7 @@ const Carousel = (props) => {
           src={pic}
           alt="All Pictures Of Apartment"
           className={getClassName(i)}
-        >
-          {" "}
-        </img>
+        ></img>
       ))}
       <p className="counter">
         {currentPic + 1}/{pictures.length}

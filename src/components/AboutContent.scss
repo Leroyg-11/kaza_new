@@ -6,62 +6,6 @@
   align-items: center;
   gap: 25px;
   padding-bottom: 3rem;
-
-  .container_box {
-    width: 70vw;
-
-    overflow: hidden;
-    .title_box {
-      display: flex;
-      justify-content: space-between;
-      padding: 0 20px;
-      background-color: $color-primary;
-      border-radius: 5px;
-      height: 55px;
-      align-items: center;
-      color: $color-tertiary;
-      z-index: 1;
-      position: relative;
-      img {
-        object-fit: none;
-        cursor: pointer;
-      }
-    }
-
-    @keyframes slide-in {
-      from {
-        transform: translateY(-60%);
-      }
-    }
-
-    p {
-      padding: 3% 5%;
-      display: none;
-      transform: translateY(-100%);
-      transition: transform 0.3s ease;
-      background-color: $grid-background-light;
-      margin: 0;
-      border-radius: 5px;
-      animation: slide-in 0.5s ease-in-out;
-    }
-  }
-}
-
-.title_box {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-
-  &.open {
-    transform: translateY(0px);
-    img {
-      transform: rotate(180deg);
-    }
-  }
-}
-
-.container_box.open p {
-  display: block;
-  transform: translateY(0px);
 }
 
 @media screen and (width <= 768px) {
@@ -71,8 +15,5 @@
     align-items: center;
     margin: 0 3rem;
     gap: 5vh;
-    .container_box {
-      width: 100%;
-    }
   }
 }
