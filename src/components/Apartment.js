@@ -1,16 +1,12 @@
 import React from "react";
 import "./Apartment.scss";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+
 
 function Apartment(props) {
-  const state = {
-    apartmentId: props.id,
-  };
-  const { id } = useParams();
-
+  
   return (
-    <Link to={`/flat/${props.id}`}>
+    <Link to={`/flat/${props.id}`}> 
       <div className="apartment">
         <img src={props.cover} alt="" />
         <p className="card_title">{props.title} </p>
@@ -20,3 +16,8 @@ function Apartment(props) {
 }
 
 export default Apartment;
+
+
+// Lorsque le div est cliqué, il navigue vers une route spécifique en utilisant le composant Link de React Router.
+
+// La route est construite en utilisant la valeur props.id

@@ -1,9 +1,6 @@
 import React from "react";
 import "../ApartmentContentModule/TextWrap.scss";
 
-import vector from "../../asset/Vector.png";
-
-import { useState } from "react";
 import Collapse from "../Collapse";
 
 const TextWrap = (props) => {
