@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import "./Carousel.scss";
 
@@ -24,7 +24,7 @@ const Carousel = (props) => {
   };
 
   if (pictures.length <= 1) {
-    // Si pictures.length est inférieur ou égal à 1, ne rend rien
+    // Si pictures.length est inférieur ou égal à 1, alors pas besoin des fleche et du compteur de photos
     return (
       <div className="apartment_img">
         {pictures.map((pic, i) => (

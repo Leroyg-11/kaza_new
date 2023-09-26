@@ -19,7 +19,7 @@ function ApartmentPage() {
   }
   if (!selectedFlat) return <Error />;
 
-  return (// les données selectedFlat sont passées en tant que prop au composant AppartmentContent
+  return ( // les données selectedFlat sont passées en tant que prop au composant AppartmentContent
     <div className="apartment_page"> 
       <ApartmentContent flat={selectedFlat} /> 
     </div>
